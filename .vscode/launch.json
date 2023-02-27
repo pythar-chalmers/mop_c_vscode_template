@@ -1,0 +1,49 @@
+{
+	"version": "1.0.0",
+	"configurations": [
+			{
+				"linux": {
+						"gdbpath": "gdb-multiarch"
+				},
+				"windows": {
+						"gdbpath": "arm-none-eabi-gdb"
+				},
+				"name": "Debug - SimServer",
+				"type": "gdb",
+				"request": "attach",
+				"executable": "./debug/MOP",
+				"target": ":1234",
+				"remote": true,
+				"cwd": "${workspaceRoot}",
+				"valuesFormatting": "parseText",
+				"autorun": [
+						"file debug/MOP",
+						"target extended-remote localhost:1234",
+						"load",
+						"monitor restart",
+						"b main",
+				],
+				"preLaunchTask": "build"
+		},	
+		{
+			"name" : "Cortex Debug",
+			"cwd": "${workspaceRoot}",
+			"executable": "./debug/MOP",
+			"request": "attach",
+			"type": "cortex-debug",
+			"servertype": "external",
+			"gdbPath": "gdb-multiarch",
+			"gdbTarget": "localhost:1234",
+			"preLaunchTask": "build",
+			"preAttachCommands": [
+					"file debug/MOP",
+					"load",
+					"monitor restart",
+					"b main",
+			],
+			"postRestartCommands": [
+					"monitor restart",
+			],
+		}
+	]
+}
