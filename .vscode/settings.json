@@ -1,16 +1,7 @@
 {
     "files.associations": {
         "*.html": "html",
-        "display.h": "c",
-        "startup.h": "c",
-        "geometry.h": "c",
         "types.h": "c",
-        "math.h": "c",
-        "pong.h": "c",
-        "gfx.h": "c",
-        "gpio.h": "c",
-        "time.h": "c",
-        "debug.h": "c"
-    },
-    "cortex-debug.registerUseNaturalFormat": false
+        "startup.h": "c"
+    }
 }

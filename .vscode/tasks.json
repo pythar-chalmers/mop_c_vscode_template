@@ -9,7 +9,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": "make build"
+			"command": "make build"			
 		}
 	]
 }
